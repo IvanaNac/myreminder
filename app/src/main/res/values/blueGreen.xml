@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="blueGreen">
+        <item name="android:background"> #459D88 </item>
+        <item name="android:textColor"> #FFFFFF </item>
+    </style>
+
+</resources>

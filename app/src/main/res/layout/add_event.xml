@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:nestedScrollingEnabled="false"
+    android:background="@drawable/back3">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameInput"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:hint="Enter name of event"
+        android:gravity="center_horizontal"
+        android:textColorHint="#ff459d88"
+        android:textColor="#459D88" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="dd / mm / yy"
+            android:textStyle="bold"
+            android:id="@+id/insertDate"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:textColor="#459D88"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="hh : mm"
+            android:textStyle="bold"
+
+            android:id="@+id/insertTime"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="change background"
+            android:textStyle="bold"
+
+            android:id="@+id/bkgText"
+            android:gravity="center_vertical"
+            android:textColor="#459D88"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/bkg"
+            android:onClick="changePhoto"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/commentText"
+        android:layout_gravity="center_horizontal"
+        android:hint="Add a comment to the event?"
+        android:textStyle="bold"
+
+        android:textColor="#459D88"
+        android:textColorHint="#459D88" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/not"
+            android:textStyle="bold"
+
+            android:id="@+id/textView3"
+            android:textColor="#459D88"
+            android:textSize="18sp"
+            android:layout_weight="0.38"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center" />
+
+        <ToggleButton
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:id="@+id/toggleButton"
+            android:checked="false"
+            android:clickable="true"
+            android:textColor="#FFFF"
+            android:background="#459D88" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:id="@+id/saveButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:onClick="saveChanges"
+        android:textColor="#FFFF"
+        android:background="#459D88" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:textStyle="bold"
+
+        android:id="@+id/printDetails" />
+
+
+</LinearLayout>

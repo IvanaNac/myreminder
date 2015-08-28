@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyReminder</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_event">Add event</string>
+    <string name="events">New event</string>
+    <string name="add_icon">&#xe604;</string>
+    <string name="single_event">single event</string>
+    <string name="edit_icon">&#xf044;</string>
+    <string name="delete_icon">&#xf00d;</string>
+    <string name="notification">Notifications</string>
+    <string name="not">Add a notification?</string>
+</resources>
