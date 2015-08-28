@@ -63,9 +63,14 @@ public class SingleEvent extends Activity {
     }
 
     public void editEvent(View view) {
+        SQLiteDatabase db = myHandler.getWritableDatabase();
+        TextView nameOut = (TextView)findViewById(R.id.nameOut);
+
+        db.execSQL("update from " + DBHandler.TABLE_NAME + " where " + DBHandler.COLUMN_NAME + "='" + nameOut.getText() + "'");
+        Toast.makeText(this, "Event updated", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, Reminders.class);
+        startActivity(intent);
 
     }
-
-
 }
 

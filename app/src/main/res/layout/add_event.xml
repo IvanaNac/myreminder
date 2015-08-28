@@ -17,6 +17,7 @@
         android:gravity="center_horizontal"
         android:textColorHint="#222121"
         android:textColor="#222121"
+
         android:textSize="24sp" />
 
 
@@ -37,6 +38,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:textColor="#222121"
+
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
@@ -53,7 +55,9 @@
             android:layout_weight="1"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
+
             android:textColor="#222121"
+
             android:layout_marginBottom="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp" />
@@ -76,6 +80,7 @@
             android:id="@+id/bkgText"
             android:gravity="center_vertical"
             android:textColor="#222121"
+
             android:layout_margin="8dp"
             android:textSize="18sp" />
 
@@ -98,7 +103,6 @@
         android:layout_gravity="center_horizontal"
         android:hint="Add a comment to the event?"
         android:textStyle="bold"
-
         android:textColor="#222121"
         android:textColorHint="#222121"
         android:textSize="20sp" />
@@ -122,6 +126,7 @@
             android:textStyle="bold"
 
             android:id="@+id/textView3"
+
             android:textColor="#222121"
             android:textSize="20sp"
             android:layout_weight="0.38"
@@ -135,8 +140,10 @@
             android:id="@+id/toggleButton"
             android:checked="false"
             android:clickable="true"
+
             android:textColor="#222121"
             android:background="#459D88" />
+
     </LinearLayout>
 
     <Button
@@ -149,6 +156,7 @@
         android:onClick="saveChanges"
         android:textColor="#222121"
         android:background="#459D88" />
+
 
     <TextView
         android:layout_width="300dp"
