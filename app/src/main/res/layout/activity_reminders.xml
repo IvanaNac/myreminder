@@ -23,7 +23,7 @@
         android:capitalize="words"
         android:onClick="onClickAdd"
         android:textSize="36sp"
-        android:textColor="#459D88"
+        android:textColor="#222121"
         android:textStyle="normal|bold"
         android:layout_alignTop="@+id/textView4"
         android:layout_alignRight="@+id/listView"
