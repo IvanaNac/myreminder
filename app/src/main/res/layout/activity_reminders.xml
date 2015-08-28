@@ -22,13 +22,14 @@
         android:id="@+id/events"
         android:capitalize="words"
         android:onClick="onClickAdd"
-        android:textSize="25dp"
-        android:layout_alignParentTop="true"
+        android:textSize="36sp"
+        android:textColor="#459D88"
+        android:textStyle="normal|bold"
+        android:layout_alignTop="@+id/textView4"
         android:layout_alignRight="@+id/listView"
         android:layout_alignEnd="@+id/listView"
-        android:layout_marginRight="47dp"
-        android:layout_marginEnd="47dp"
-        android:layout_above="@+id/listView" />
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp" />
 
     <TextView
         android:layout_width="wrap_content"

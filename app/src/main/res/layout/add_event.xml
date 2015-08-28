@@ -16,7 +16,8 @@
         android:hint="Enter name of event"
         android:gravity="center_horizontal"
         android:textColorHint="#ff459d88"
-        android:textColor="#459D88" />
+        android:textColor="#459D88"
+        android:textSize="24sp" />
 
 
     <LinearLayout
@@ -38,7 +39,8 @@
             android:textColor="#459D88"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,7 +76,8 @@
             android:id="@+id/bkgText"
             android:gravity="center_vertical"
             android:textColor="#459D88"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:textSize="18sp" />
 
         <ImageView
             android:layout_width="100dp"
@@ -97,7 +100,8 @@
         android:textStyle="bold"
 
         android:textColor="#459D88"
-        android:textColorHint="#459D88" />
+        android:textColorHint="#459D88"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -119,7 +123,7 @@
 
             android:id="@+id/textView3"
             android:textColor="#459D88"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:layout_weight="0.38"
             android:layout_marginLeft="30dp"
             android:layout_gravity="center" />
