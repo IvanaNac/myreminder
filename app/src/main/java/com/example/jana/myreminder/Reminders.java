@@ -37,11 +37,15 @@ public class Reminders extends ActionBarActivity {
           creatMyListView();
           registerClickCallBack();
 
-          TextView txt = (TextView) findViewById(R.id.textView4);
-          Typeface font = Typeface.createFromAsset(getAssets(), "icomoon.ttf");
-          txt.setTypeface(font);
-          txt.setText("\ue604");
+           intiFont();
       }
+
+    private void intiFont() {
+        TextView txt = (TextView) findViewById(R.id.textView4);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
+        txt.setTypeface(font);
+        //txt.setText("\ue604");
+    }
 
     private void registerClickCallBack() {
         ListView list = (ListView) findViewById(R.id.listView);
