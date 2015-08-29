@@ -62,7 +62,6 @@ public class SingleEvent extends Activity {
 
     public void editEvent(View view) {
 
-
         TextView nameOut = (TextView)findViewById(R.id.nameOut);
         TextView timeOut =(TextView)findViewById(R.id.timeOut);
         TextView detailOut = (TextView)findViewById(R.id.detailsOut);

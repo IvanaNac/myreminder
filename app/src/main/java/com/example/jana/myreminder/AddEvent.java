@@ -29,8 +29,6 @@ import android.widget.ToggleButton;
 
 import java.io.IOException;
 import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -77,33 +75,27 @@ public class AddEvent extends ActionBarActivity{
             EditText nameInput=(EditText)findViewById(R.id.nameInput);
             EditText commentText=(EditText)findViewById(R.id.commentText);
             ImageView imageView=(ImageView)findViewById(R.id.imageView);
-            TextView date=(TextView)findViewById(R.id.insertDate);
-            TextView time=(TextView)findViewById(R.id.insertTime);
+            TextView inserDate=(TextView)findViewById(R.id.insertDate);
+            TextView inserTime=(TextView)findViewById(R.id.insertTime);
 
-            Intent intentB=getIntent();
-            Bundle bundle=intentB.getExtras();
+            Bundle bundle=getIntent().getExtras();
+
             if(bundle!=null) {
 
-                String name=bundle.getString("name");
+                String name = bundle.getString("name");
                 nameInput.setText(name);
 
-                String comment=bundle.getString("details");
+                String comment = bundle.getString("details");
                 commentText.setText(comment);
 
-                String image=bundle.getString("image");
-                Drawable drawable=Drawable.createFromPath(image);
+                String image = bundle.getString("image");
+                Drawable drawable = Drawable.createFromPath(image);
                 imageView.setImageDrawable(drawable);
 
-                String dateTime=bundle.getString("dateTime");
-                SimpleDateFormat sdf=new SimpleDateFormat("dd/mm/yy");
-                try {
-                    Date newDate =sdf.parse(dateTime);
-                    return sdf.format(date);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
-
+                String dateTime = bundle.getString("dateTime");
+                String[] separate = dateTime.split(" ");
+                inserDate.setText(separate[0]);
+                inserTime.setText(separate[1]);
             }
 
         }
