@@ -12,13 +12,14 @@
         android:layout_width="332dp"
         android:layout_height="80dp"
         android:id="@+id/nameOut"
-        android:layout_alignParentTop="true"
         android:textColor="#459D88"
         android:textSize="40dp"
         android:textAlignment="center"
         android:gravity="center"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/edit"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2" />
     <TextView
         android:layout_width="321dp"
         android:layout_height="30dp"
@@ -52,31 +53,32 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/edit"
         android:text="@string/edit_icon"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="48dp"
+        android:textSize="48sp"
         android:onClick="editEvent"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2"
-        android:layout_alignBottom="@+id/button" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_marginRight="60dp"
+        android:layout_marginEnd="60dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/delete_icon"
+        android:id="@+id/delete"
+        android:onClick="deleteEvent"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/edit"
+        android:layout_alignLeft="@+id/timeOut"
+        android:layout_alignStart="@+id/timeOut" />
 
     <ImageView
         android:layout_width="326dp"
         android:layout_height="300dp"
         android:id="@+id/imageView2"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/timeOut"
-        android:layout_below="@+id/nameOut" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:text="@string/delete_icon"
-        android:onClick="deleteEvent"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/detailsOut"
-        android:layout_toStartOf="@+id/detailsOut" />
+        android:layout_above="@+id/timeOut" />
 
 </RelativeLayout>

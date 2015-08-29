@@ -12,14 +12,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,9 +29,11 @@ import android.widget.ToggleButton;
 
 import java.io.IOException;
 import java.sql.Time;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
 
 public class AddEvent extends ActionBarActivity{
 
@@ -67,7 +68,45 @@ public class AddEvent extends ActionBarActivity{
 
         showDialogOnButtonClick();
         showTimePickerDialog();
+        onEditButtonClicked();
+
     }
+    // For EDITING the Single event from the LIST
+        private void onEditButtonClicked() {
+
+            EditText nameInput=(EditText)findViewById(R.id.nameInput);
+            EditText commentText=(EditText)findViewById(R.id.commentText);
+            ImageView imageView=(ImageView)findViewById(R.id.imageView);
+            TextView date=(TextView)findViewById(R.id.insertDate);
+            TextView time=(TextView)findViewById(R.id.insertTime);
+
+            Intent intentB=getIntent();
+            Bundle bundle=intentB.getExtras();
+            if(bundle!=null) {
+
+                String name=bundle.getString("name");
+                nameInput.setText(name);
+
+                String comment=bundle.getString("details");
+                commentText.setText(comment);
+
+                String image=bundle.getString("image");
+                Drawable drawable=Drawable.createFromPath(image);
+                imageView.setImageDrawable(drawable);
+
+                String dateTime=bundle.getString("dateTime");
+                SimpleDateFormat sdf=new SimpleDateFormat("dd/mm/yy");
+                try {
+                    Date newDate =sdf.parse(dateTime);
+                    return sdf.format(date);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+        }
 
     //DatePickerDialog
     public void showDialogOnButtonClick(){

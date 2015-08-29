@@ -24,7 +24,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Small Text"
             android:id="@+id/textView2"
-            android:layout_weight="0.56" />
+            android:layout_weight="0.56"
+            android:textStyle="bold"
+            android:textColor="black" />
 
         <TextView
             android:layout_width="match_parent"
@@ -32,7 +34,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Event details here..."
             android:id="@+id/textView"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"
+            android:textColor="black"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>

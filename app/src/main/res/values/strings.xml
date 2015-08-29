@@ -5,12 +5,12 @@
     <string name="action_settings">Settings</string>
     <string name="add_event">Add event</string>
     <string name="events">New event</string>
+
     <string name="add_icon">&#xf004;</string>
     <string name="edit_icon">&#xf044;</string>
-    <string name="delete_icon">&#xf00d;</string>
+    <string name="delete_icon">&#xf014;</string>
 
     <string name="single_event">single event</string>
-
     <string name="notification">Notifications</string>
     <string name="not">Add a notification?</string>
 </resources>

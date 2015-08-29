@@ -49,7 +49,6 @@ public class SingleEvent extends Activity {
         ImageView imageView = (ImageView)findViewById(R.id.imageView2);
         Drawable drawable=Drawable.createFromPath(photo);
         imageView.setImageDrawable(drawable);
-
         detailOut.setText(details);
 
     }
@@ -63,12 +62,20 @@ public class SingleEvent extends Activity {
     }
 
     public void editEvent(View view) {
-        SQLiteDatabase db = myHandler.getWritableDatabase();
-        TextView nameOut = (TextView)findViewById(R.id.nameOut);
 
-        db.execSQL("update from " + DBHandler.TABLE_NAME + " where " + DBHandler.COLUMN_NAME + "='" + nameOut.getText() + "'");
-        Toast.makeText(this, "Event updated", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, Reminders.class);
+
+        TextView nameOut = (TextView)findViewById(R.id.nameOut);
+        TextView timeOut =(TextView)findViewById(R.id.timeOut);
+        TextView detailOut = (TextView)findViewById(R.id.detailsOut);
+        ImageView imageView = (ImageView)findViewById(R.id.imageView2);
+
+        Intent intent = new Intent(SingleEvent.this, AddEvent.class);
+
+        intent.putExtra("name", nameOut.getText().toString());
+        intent.putExtra("dateTime", timeOut.getText().toString());
+        intent.putExtra("image",imageView.toString());
+        intent.putExtra("details",detailOut.getText().toString());
+
         startActivity(intent);
 
     }
