@@ -40,7 +40,7 @@
         android:id="@+id/textView4"
         android:text="@string/add_icon"
         android:textSize="65sp"
-        android:textColor="#F59012"
+        android:textColor="#459D88"
         android:onClick="onClickAdd"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

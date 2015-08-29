@@ -7,7 +7,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +30,12 @@ public class SingleEvent extends Activity {
         //Button btnEdit = (Button) findViewById(R.id.editButton);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
-        TextView text=(TextView)findViewById(R.id.edit);
-        Button deleteButton = (Button)findViewById(R.id.button);
-        text.setTypeface(font);
-        deleteButton.setTypeface(font);
-        text.setText(getResources().getText(R.string.edit_icon));
-        deleteButton.setText((getResources().getText(R.string.delete_icon)));
+        TextView editText=(TextView)findViewById(R.id.edit);
+        TextView deleteText = (TextView)findViewById(R.id.button);
+        editText.setTypeface(font);
+        deleteText.setTypeface(font);
+        editText.setText(getResources().getText(R.string.edit_icon));
+        deleteText.setText((getResources().getText(R.string.delete_icon)));
 
         Intent i = getIntent();
         String name = i.getStringExtra("nameOut");
