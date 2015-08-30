@@ -106,7 +106,9 @@ public class Reminders extends ActionBarActivity {
 
             //fill the view
             ImageView custom_Image=(ImageView)customView.findViewById(R.id.imageView);
-            Bitmap myBitmap = BitmapFactory.decodeFile(currentEvent.getmPhoto());
+            final BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 8;
+            Bitmap myBitmap = BitmapFactory.decodeFile(currentEvent.getmPhoto(),options);
             custom_Image.setImageBitmap(myBitmap);
 
             TextView custom_Name=(TextView)customView.findViewById(R.id.textView);

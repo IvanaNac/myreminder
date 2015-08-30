@@ -26,7 +26,7 @@
             android:id="@+id/textView2"
             android:layout_weight="0.56"
             android:textStyle="bold"
-            android:textColor="black" />
+            android:textColor="#000000" />
 
         <TextView
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:text="Event details here..."
             android:id="@+id/textView"
             android:layout_margin="5dp"
-            android:textColor="black"
+            android:textColor="#000000"
             android:textStyle="bold" />
 
     </LinearLayout>

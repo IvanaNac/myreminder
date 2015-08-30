@@ -31,7 +31,7 @@ public class SingleEvent extends Activity {
 
         Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         TextView editText=(TextView)findViewById(R.id.edit);
-        TextView deleteText = (TextView)findViewById(R.id.button);
+        TextView deleteText = (TextView)findViewById(R.id.delete);
         editText.setTypeface(font);
         deleteText.setTypeface(font);
         editText.setText(getResources().getText(R.string.edit_icon));
