@@ -44,7 +44,10 @@ public class Reminders extends ActionBarActivity {
         TextView txt = (TextView) findViewById(R.id.textView4);
         Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         txt.setTypeface(font);
+<<<<<<< HEAD
+=======
         //txt.setText("\ue604");
+>>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
     }
 
     private void registerClickCallBack() {

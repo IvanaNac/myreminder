@@ -8,14 +8,11 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
-<<<<<<< HEAD
-import android.content.DialogInterface;
-=======
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -23,10 +20,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-<<<<<<< HEAD
-import android.widget.Button;
-=======
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -34,14 +27,15 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
 import java.io.IOException;
 import java.sql.Time;
 import java.util.Calendar;
 import java.util.Date;
 
-
-public class AddEvent extends ActionBarActivity{
+/**
+ * Created by jmagdeska on 8/31/15.
+ */
+public class EditEvent extends ActionBarActivity {
 
     TextView insertDate;
     TextView insertTime;
@@ -59,58 +53,55 @@ public class AddEvent extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_event);
 
-        final Calendar cal = Calendar.getInstance();
-        year_x = cal.get(Calendar.YEAR);
-        month_x = cal.get(Calendar.MONTH);
-        day_x = cal.get(Calendar.DAY_OF_MONTH);
-
-        TextView insertDate = (TextView)findViewById(R.id.insertDate);
-        insertDate.setText(day_x + " / " + month_x + " / " + year_x);
-
-        TextView insertTime = (TextView)findViewById(R.id.insertTime);
-        hour_x = cal.get(Calendar.HOUR);
-        minute_x = cal.get(Calendar.MINUTE);
-        insertTime.setText(hour_x + ":" + minute_x);
-
         showDialogOnButtonClick();
         showTimePickerDialog();
-<<<<<<< HEAD
-    }
-=======
         onEditButtonClicked();
 
     }
     // For EDITING the Single event from the LIST
-        private void onEditButtonClicked() {
+    private void onEditButtonClicked() {
 
-            EditText nameInput=(EditText)findViewById(R.id.nameInput);
-            EditText commentText=(EditText)findViewById(R.id.commentText);
-            ImageView imageView=(ImageView)findViewById(R.id.imageView);
-            TextView inserDate=(TextView)findViewById(R.id.insertDate);
-            TextView inserTime=(TextView)findViewById(R.id.insertTime);
+        EditText nameInput = (EditText) findViewById(R.id.nameInput);
+        EditText commentText = (EditText) findViewById(R.id.commentText);
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        TextView inserDate = (TextView) findViewById(R.id.insertDate);
+        TextView inserTime = (TextView) findViewById(R.id.insertTime);
 
-            Bundle bundle=getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();
 
-            if(bundle!=null) {
+        if (bundle != null) {
 
-                String name = bundle.getString("name");
-                nameInput.setText(name);
+            String name = bundle.getString("name");
+            nameInput.setText(name);
 
-                String comment = bundle.getString("details");
-                commentText.setText(comment);
+            String comment = bundle.getString("details");
+            commentText.setText(comment);
 
-                String image = bundle.getString("image");
-                Drawable drawable = Drawable.createFromPath(image);
-                imageView.setImageDrawable(drawable);
+            String image = bundle.getString("image");
+            Drawable drawable = Drawable.createFromPath(image);
+            imageView.setImageDrawable(drawable);
+            realPath = image;
 
-                String dateTime = bundle.getString("dateTime");
-                String[] separate = dateTime.split(" ");
-                inserDate.setText(separate[0]);
-                inserTime.setText(separate[1]);
-            }
+            String dateTime = bundle.getString("dateTime");
+            String[] separate = dateTime.split(" ");
+            inserDate.setText(separate[0]);
+            inserTime.setText(separate[1]);
 
+            TextView insertDate = (TextView)findViewById(R.id.insertDate);
+            String[] cal = separate[0].split("-");
+            year_x = Integer.parseInt(cal[0]);
+            month_x = Integer.parseInt(cal[1]);
+            day_x = Integer.parseInt(cal[2]);
+            insertDate.setText(day_x + " / " + (month_x+1) + " / " + year_x);
+
+            TextView insertTime = (TextView)findViewById(R.id.insertTime);
+            String[] time = separate[1].split(":");
+            hour_x = Integer.parseInt(time[0]);
+            minute_x = Integer.parseInt(time[1]);
+            insertTime.setText(hour_x + ":" + minute_x);
         }
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
+    }
+
 
     //DatePickerDialog
     public void showDialogOnButtonClick(){
@@ -263,18 +254,14 @@ public class AddEvent extends ActionBarActivity{
         final String commentInput = commentText.getText().toString();
         int notificationID = 0;
 
-<<<<<<< HEAD
-        if(nameInput.equals("")) { Toast.makeText(this, "Please add a name!" , Toast.LENGTH_SHORT).show(); }
+        if(nameInput.equals("")) { Toast.makeText(this, "Please add a name!", Toast.LENGTH_SHORT).show(); }
         if(realPath.equals("")) { Toast.makeText(this, "Please add a photo!", Toast.LENGTH_SHORT).show(); }
-=======
-        if(nameInput=="") { Toast.makeText(this, "Please add a name!" , Toast.LENGTH_SHORT).show(); }
-        if(realPath=="") { Toast.makeText(this, "Please choose a photo!" , Toast.LENGTH_SHORT).show(); }
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
         else {
 
             SQLiteDatabase db = handler.getWritableDatabase();
             Events event = new Events(nameInput, insertDate, insertTime, realPath, commentInput);
-            handler.addEvent(event, db);
+            Bundle bundle = getIntent().getExtras();
+            handler.editEvent(event, db, bundle.getString("name"));
 
             if (isEmpty()) {
                 notificationID = 1;
