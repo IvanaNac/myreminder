@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -66,6 +67,7 @@ public class EditEvent extends ActionBarActivity {
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
         TextView inserDate = (TextView) findViewById(R.id.insertDate);
         TextView inserTime = (TextView) findViewById(R.id.insertTime);
+        Typeface letters=Typeface.createFromAsset(getAssets(), "corporate-s-regular.ttf");
 
         Bundle bundle = getIntent().getExtras();
 
@@ -73,9 +75,12 @@ public class EditEvent extends ActionBarActivity {
 
             String name = bundle.getString("name");
             nameInput.setText(name);
+            nameInput.setTypeface(letters);
+
 
             String comment = bundle.getString("details");
             commentText.setText(comment);
+            commentText.setTypeface(letters);
 
             String image = bundle.getString("image");
             Drawable drawable = Drawable.createFromPath(image);
@@ -85,6 +90,8 @@ public class EditEvent extends ActionBarActivity {
             String dateTime = bundle.getString("dateTime");
             String[] separate = dateTime.split(" ");
             inserDate.setText(separate[0]);
+            inserDate.setTypeface(letters);
+            inserTime.setTypeface(letters);
             inserTime.setText(separate[1]);
 
             String[] cal = separate[0].split("-");
@@ -92,6 +99,7 @@ public class EditEvent extends ActionBarActivity {
             month_x = Integer.parseInt(cal[1]);
             day_x = Integer.parseInt(cal[2]);
             insertDate.setText(day_x + " / " + (month_x+1) + " / " + year_x);
+
 
             String[] time = separate[1].split(":");
             hour_x = Integer.parseInt(time[0]);

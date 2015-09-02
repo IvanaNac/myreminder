@@ -125,12 +125,18 @@ public class Reminders extends ActionBarActivity {
             Bitmap myBitmap = BitmapFactory.decodeFile(currentEvent.getmPhoto(),options);
             custom_Image.setImageBitmap(myBitmap);
 
+
+            Typeface letters=Typeface.createFromAsset(getAssets(),"corporate-s-regular.ttf");
+
             TextView custom_Name=(TextView)customView.findViewById(R.id.textView);
             custom_Name.setText( currentEvent.getmName());
+            custom_Name.setTypeface(letters);
 
             TextView custom_Date=(TextView)customView.findViewById(R.id.textView2);
             String[] date=currentEvent.getDateTime().split(" ");
             custom_Date.setText( date[0]);
+            custom_Date.setTypeface(letters);
+
 
         return customView;
         }

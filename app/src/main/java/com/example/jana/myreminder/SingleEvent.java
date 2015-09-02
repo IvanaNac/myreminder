@@ -32,9 +32,8 @@ public class SingleEvent extends Activity {
 
         TextView nameOut = (TextView) findViewById(R.id.nameOut);
         TextView timeOut = (TextView) findViewById(R.id.timeOut);
-        // View photo = (View)findViewById(R.id.single_event_id);
         TextView detailOut = (TextView) findViewById(R.id.detailsOut);
-        //Button btnEdit = (Button) findViewById(R.id.editButton);
+
 
         Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         TextView editText = (TextView) findViewById(R.id.editBtn);
@@ -51,12 +50,18 @@ public class SingleEvent extends Activity {
         String details = i.getStringExtra("detailsOut");
         String photo = i.getStringExtra("single_event_id");
 
+        Typeface letters=Typeface.createFromAsset(getAssets(), "corporate-s-regular.ttf");
+        nameOut.setTypeface(letters);
         nameOut.setText(name);
+        timeOut.setTypeface(letters);
         timeOut.setText(date);
+        detailOut.setTypeface(letters);
+        detailOut.setText(details);
+
         ImageView imageView = (ImageView) findViewById(R.id.imageView2);
         Drawable drawable = Drawable.createFromPath(photo);
         imageView.setImageDrawable(drawable);
-        detailOut.setText(details);
+
 
     }
 

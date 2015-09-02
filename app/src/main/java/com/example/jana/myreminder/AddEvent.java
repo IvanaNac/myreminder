@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -58,13 +59,16 @@ public class AddEvent extends ActionBarActivity{
         month_x = cal.get(Calendar.MONTH);
         day_x = cal.get(Calendar.DAY_OF_MONTH);
 
+        Typeface letters=Typeface.createFromAsset(getAssets(), "corporate-s-regular.ttf");
         TextView insertDate = (TextView)findViewById(R.id.insertDate);
         insertDate.setText(day_x + " / " + month_x + " / " + year_x);
+        insertDate.setTypeface(letters);
 
         TextView insertTime = (TextView)findViewById(R.id.insertTime);
         hour_x = cal.get(Calendar.HOUR);
         minute_x = cal.get(Calendar.MINUTE);
         insertTime.setText(hour_x + ":" + minute_x);
+        insertTime.setTypeface(letters);
 
         showDialogOnButtonClick();
         showTimePickerDialog();
@@ -80,6 +84,7 @@ public class AddEvent extends ActionBarActivity{
             ImageView imageView=(ImageView)findViewById(R.id.imageView);
             TextView inserDate=(TextView)findViewById(R.id.insertDate);
             TextView inserTime=(TextView)findViewById(R.id.insertTime);
+            Typeface letters=Typeface.createFromAsset(getAssets(), "corporate-s-regular.ttf");
 
             Bundle bundle=getIntent().getExtras();
 
@@ -87,9 +92,11 @@ public class AddEvent extends ActionBarActivity{
 
                 String name = bundle.getString("name");
                 nameInput.setText(name);
+                nameInput.setTypeface(letters);
 
                 String comment = bundle.getString("details");
                 commentText.setText(comment);
+                commentText.setTypeface(letters);
 
                 String image = bundle.getString("image");
                 Drawable drawable = Drawable.createFromPath(image);
@@ -98,7 +105,9 @@ public class AddEvent extends ActionBarActivity{
                 String dateTime = bundle.getString("dateTime");
                 String[] separate = dateTime.split(" ");
                 inserDate.setText(separate[0]);
+                inserDate.setTypeface(letters);
                 inserTime.setText(separate[1]);
+                inserTime.setTypeface(letters);
             }
 
         }
