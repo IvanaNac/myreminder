@@ -3,7 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/single_event_id"
-
     android:weightSum="1"
     android:background="@drawable/back3">
 
@@ -17,11 +16,7 @@
         android:textAlignment="center"
         android:gravity="center"
         android:textStyle="bold"
-<<<<<<< HEAD
         android:layout_below="@+id/editBtn"
-=======
-        android:layout_below="@+id/edit"
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
         android:layout_alignLeft="@+id/imageView2"
         android:layout_alignStart="@+id/imageView2"
         android:layout_above="@+id/imageView2" />
@@ -53,7 +48,6 @@
         android:layout_alignLeft="@+id/imageView2"
         android:layout_alignStart="@+id/imageView2" />
 
-<<<<<<< HEAD
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -117,7 +111,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-=======
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -144,13 +137,5 @@
         android:layout_alignLeft="@+id/timeOut"
         android:layout_alignStart="@+id/timeOut"
         android:textColor="#459D88" />
-
-    <ImageView
-        android:layout_width="326dp"
-        android:layout_height="300dp"
-        android:id="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/timeOut" />
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
 
 </RelativeLayout>

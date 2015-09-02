@@ -52,7 +52,6 @@ public class DBHandler extends SQLiteOpenHelper {
        // db.close();
     }
 
-<<<<<<< HEAD
     public void editEvent (Events event, SQLiteDatabase db, String eventName) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, event.getmName());
@@ -62,8 +61,6 @@ public class DBHandler extends SQLiteOpenHelper {
         db.update(TABLE_NAME, values, COLUMN_NAME + "=" + "'" + eventName + "'", null);
     }
 
-=======
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
     public Cursor getEvent() {
         SQLiteDatabase db = getReadableDatabase();
         String[] columns = {COLUMN_NAME,COLUMN_DATE, COLUMN_PHOTO, COLUMN_COMMENT};

@@ -87,14 +87,12 @@ public class EditEvent extends ActionBarActivity {
             inserDate.setText(separate[0]);
             inserTime.setText(separate[1]);
 
-            TextView insertDate = (TextView)findViewById(R.id.insertDate);
             String[] cal = separate[0].split("-");
             year_x = Integer.parseInt(cal[0]);
             month_x = Integer.parseInt(cal[1]);
             day_x = Integer.parseInt(cal[2]);
             insertDate.setText(day_x + " / " + (month_x+1) + " / " + year_x);
 
-            TextView insertTime = (TextView)findViewById(R.id.insertTime);
             String[] time = separate[1].split(":");
             hour_x = Integer.parseInt(time[0]);
             minute_x = Integer.parseInt(time[1]);
@@ -272,7 +270,6 @@ public class EditEvent extends ActionBarActivity {
             db.close();
             ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton);
             if (toggle.isChecked()) {
-                Toast.makeText(this, "Notification added!", Toast.LENGTH_SHORT).show();
                 reminder(insertDate, insertTime, nameInput, realPath, commentInput, notificationID);
             }
 

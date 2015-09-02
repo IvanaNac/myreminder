@@ -8,10 +8,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
-<<<<<<< HEAD
 import android.content.DialogInterface;
-=======
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,10 +20,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.Button;
-=======
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -74,12 +68,10 @@ public class AddEvent extends ActionBarActivity{
 
         showDialogOnButtonClick();
         showTimePickerDialog();
-<<<<<<< HEAD
-    }
-=======
         onEditButtonClicked();
-
     }
+
+
     // For EDITING the Single event from the LIST
         private void onEditButtonClicked() {
 
@@ -110,7 +102,6 @@ public class AddEvent extends ActionBarActivity{
             }
 
         }
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
 
     //DatePickerDialog
     public void showDialogOnButtonClick(){
@@ -263,13 +254,10 @@ public class AddEvent extends ActionBarActivity{
         final String commentInput = commentText.getText().toString();
         int notificationID = 0;
 
-<<<<<<< HEAD
         if(nameInput.equals("")) { Toast.makeText(this, "Please add a name!" , Toast.LENGTH_SHORT).show(); }
         if(realPath.equals("")) { Toast.makeText(this, "Please add a photo!", Toast.LENGTH_SHORT).show(); }
-=======
-        if(nameInput=="") { Toast.makeText(this, "Please add a name!" , Toast.LENGTH_SHORT).show(); }
-        if(realPath=="") { Toast.makeText(this, "Please choose a photo!" , Toast.LENGTH_SHORT).show(); }
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
+
+
         else {
 
             SQLiteDatabase db = handler.getWritableDatabase();
@@ -285,7 +273,6 @@ public class AddEvent extends ActionBarActivity{
             db.close();
             ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton);
             if (toggle.isChecked()) {
-                Toast.makeText(this, "Notification added!", Toast.LENGTH_SHORT).show();
                 reminder(insertDate, insertTime, nameInput, realPath, commentInput, notificationID);
             }
 

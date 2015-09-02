@@ -23,10 +23,8 @@ public class OnAlarmReceiver extends BroadcastReceiver {
         NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Notification notification = intent.getParcelableExtra(NOTIFICATION);
-<<<<<<< HEAD
         notification.defaults |= Notification.DEFAULT_SOUND;
-=======
->>>>>>> d57718ef1181e21330f67ce8fa07a60e0242e957
+
         int id = intent.getIntExtra(NOTIFICATION_ID, 0);
         notificationManager.notify(id, notification);
 
