@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:gravity="center">
 
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:id="@+id/welcomeScreen"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="77dp"
+        android:layout_gravity="center"
         android:background="@drawable/icon"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/name"
@@ -28,6 +28,6 @@
         android:textStyle="bold"
         android:layout_below="@+id/welcomeScreen"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center" />
 
 </LinearLayout>

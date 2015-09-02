@@ -3,6 +3,7 @@ package com.example.jana.myreminder;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
@@ -33,12 +34,26 @@ public class Reminders extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminders);
 
-          getResults();
+          if(!isEmpty()) {
+              getResults();
+          }
           creatMyListView();
           registerClickCallBack();
 
            intiFont();
       }
+
+    //Check if db is empty
+    public boolean isEmpty () {
+        Cursor c = myhandler.getEvent();
+        String print = "";
+        c.moveToFirst();
+
+        do {
+        } while (c.moveToNext());
+        if(c.getCount() == 0) return true;
+        else return false;
+    }
 
     private void intiFont() {
         TextView txt = (TextView) findViewById(R.id.textView4);

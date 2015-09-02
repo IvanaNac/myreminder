@@ -24,14 +24,15 @@
         android:onClick="onClickAdd"
         android:textSize="36sp"
         android:textColor="#222121"
-
+        android:gravity="center"
         android:textStyle="normal|bold"
         android:layout_alignRight="@+id/listView"
         android:layout_alignEnd="@+id/listView"
         android:layout_marginRight="40dp"
         android:layout_marginEnd="40dp"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/listView" />
+        android:layout_above="@+id/listView"
+        android:textAlignment="center" />
 
     <TextView
         android:layout_width="wrap_content"
