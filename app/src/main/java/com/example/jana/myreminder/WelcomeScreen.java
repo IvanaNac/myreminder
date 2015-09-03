@@ -12,7 +12,7 @@ import android.widget.ImageView;
  */
 public class WelcomeScreen extends Activity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 2000;
+    private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     @Override
     public void onCreate(Bundle icicle) {

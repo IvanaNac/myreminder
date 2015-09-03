@@ -6,6 +6,7 @@
     <string name="add_event">Add event</string>
     <string name="events">New event</string>
 
+    <string name="back_icon">&#xf060;</string>
     <string name="add_icon">&#xf271;</string>
     <string name="edit_icon">&#xf044;</string>
     <string name="delete_icon">&#xf014;</string>

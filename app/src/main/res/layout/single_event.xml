@@ -1,25 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/single_event_id"
+    android:background="@drawable/back3"
     android:weightSum="1"
-    android:background="@drawable/back3">
+    android:gravity="center">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="0dp">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/backBtn"
+            android:textColor="#459D88"
+            android:textSize="40sp"
+            android:onClick="backBtnClicked"
+            android:background="@android:color/transparent"
+            android:text="@string/delete_icon"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteBtn"
+            android:textColor="#459D88"
+            android:textSize="40sp"
+            android:onClick="deleteEvent"
+            android:background="@android:color/transparent"
+            android:text="@string/delete_icon"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingRight="15dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/editBtn"
+            android:textColor="#459D88"
+            android:textSize="40sp"
+            android:onClick="editEvent"
+            android:background="@android:color/transparent"
+            android:text="@string/edit_icon"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="332dp"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:id="@+id/nameOut"
         android:textColor="#000000"
         android:textSize="40dp"
         android:textAlignment="center"
         android:gravity="center"
         android:textStyle="bold"
-        android:layout_below="@+id/editBtn"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_above="@+id/imageView2" />
+        android:layout_below="@+id/deleteBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:id="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_above="@+id/timeOut" />
+
     <TextView
         android:layout_width="321dp"
         android:layout_height="30dp"
@@ -34,7 +99,7 @@
         android:textStyle="bold"
         android:layout_centerHorizontal="true" />
     <TextView
-        android:layout_width="326dp"
+        android:layout_width="385dp"
         android:layout_height="50dp"
         android:id="@+id/detailsOut"
         android:layout_alignParentBottom="true"
@@ -46,43 +111,7 @@
         android:textAlignment="center"
         android:textStyle="bold"
         android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2" />
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginBottom="0dp" />
 
-
-
-    <ImageView
-        android:layout_width="326dp"
-        android:layout_height="300dp"
-        android:id="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/timeOut" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/deleteBtn"
-        android:textColor="#459D88"
-        android:textSize="36sp"
-        android:onClick="deleteEvent"
-        android:background="@android:color/transparent"
-        android:text="@string/delete_icon"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editBtn"
-        android:textColor="#459D88"
-        android:textSize="36sp"
-        android:onClick="editEvent"
-        android:background="@android:color/transparent"
-        android:text="@string/edit_icon"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-</RelativeLayout>
+</LinearLayout>

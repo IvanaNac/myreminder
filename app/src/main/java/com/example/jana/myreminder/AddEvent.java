@@ -13,7 +13,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -40,7 +39,7 @@ public class AddEvent extends ActionBarActivity{
 
     TextView insertDate;
     TextView insertTime;
-    String realPath;
+    String realPath="";
     DBHandler handler = new DBHandler(this,null,null,1);
 
     int day_x, month_x, year_x;
@@ -59,58 +58,17 @@ public class AddEvent extends ActionBarActivity{
         month_x = cal.get(Calendar.MONTH);
         day_x = cal.get(Calendar.DAY_OF_MONTH);
 
-        Typeface letters=Typeface.createFromAsset(getAssets(), "corporate-s-regular.ttf");
         TextView insertDate = (TextView)findViewById(R.id.insertDate);
         insertDate.setText(day_x + " / " + month_x + " / " + year_x);
-        insertDate.setTypeface(letters);
 
         TextView insertTime = (TextView)findViewById(R.id.insertTime);
         hour_x = cal.get(Calendar.HOUR);
         minute_x = cal.get(Calendar.MINUTE);
         insertTime.setText(hour_x + ":" + minute_x);
-        insertTime.setTypeface(letters);
 
         showDialogOnButtonClick();
         showTimePickerDialog();
-        onEditButtonClicked();
     }
-
-
-    // For EDITING the Single event from the LIST
-        private void onEditButtonClicked() {
-
-            EditText nameInput=(EditText)findViewById(R.id.nameInput);
-            EditText commentText=(EditText)findViewById(R.id.commentText);
-            ImageView imageView=(ImageView)findViewById(R.id.imageView);
-            TextView inserDate=(TextView)findViewById(R.id.insertDate);
-            TextView inserTime=(TextView)findViewById(R.id.insertTime);
-            Typeface letters=Typeface.createFromAsset(getAssets(), "corporate-s-regular.ttf");
-
-            Bundle bundle=getIntent().getExtras();
-
-            if(bundle!=null) {
-
-                String name = bundle.getString("name");
-                nameInput.setText(name);
-                nameInput.setTypeface(letters);
-
-                String comment = bundle.getString("details");
-                commentText.setText(comment);
-                commentText.setTypeface(letters);
-
-                String image = bundle.getString("image");
-                Drawable drawable = Drawable.createFromPath(image);
-                imageView.setImageDrawable(drawable);
-
-                String dateTime = bundle.getString("dateTime");
-                String[] separate = dateTime.split(" ");
-                inserDate.setText(separate[0]);
-                inserDate.setTypeface(letters);
-                inserTime.setText(separate[1]);
-                inserTime.setTypeface(letters);
-            }
-
-        }
 
     //DatePickerDialog
     public void showDialogOnButtonClick(){
@@ -264,11 +222,9 @@ public class AddEvent extends ActionBarActivity{
         int notificationID = 0;
 
         if(nameInput.equals("")) { Toast.makeText(this, "Please add a name!" , Toast.LENGTH_SHORT).show(); }
-        if(realPath.equals("")) { Toast.makeText(this, "Please add a photo!", Toast.LENGTH_SHORT).show(); }
-
+//        if(realPath.equals("")) { Toast.makeText(this, "Please choose a photo!", Toast.LENGTH_SHORT).show(); }
 
         else {
-
             SQLiteDatabase db = handler.getWritableDatabase();
             Events event = new Events(nameInput, insertDate, insertTime, realPath, commentInput);
             handler.addEvent(event, db);

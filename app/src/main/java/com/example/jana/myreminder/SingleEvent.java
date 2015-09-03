@@ -32,17 +32,21 @@ public class SingleEvent extends Activity {
 
         TextView nameOut = (TextView) findViewById(R.id.nameOut);
         TextView timeOut = (TextView) findViewById(R.id.timeOut);
+        // View photo = (View)findViewById(R.id.single_event_id);
         TextView detailOut = (TextView) findViewById(R.id.detailsOut);
-
+        //Button btnEdit = (Button) findViewById(R.id.editButton);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         TextView editText = (TextView) findViewById(R.id.editBtn);
         TextView deleteText = (TextView) findViewById(R.id.deleteBtn);
+        TextView backText = (TextView) findViewById(R.id.backBtn);
 
         editText.setTypeface(font);
         deleteText.setTypeface(font);
+        backText.setTypeface(font);
         editText.setText(getResources().getText(R.string.edit_icon));
         deleteText.setText((getResources().getText(R.string.delete_icon)));
+        backText.setText(getResources().getText(R.string.back_icon));
 
         Intent i = getIntent();
         String name = i.getStringExtra("nameOut");
@@ -50,19 +54,18 @@ public class SingleEvent extends Activity {
         String details = i.getStringExtra("detailsOut");
         String photo = i.getStringExtra("single_event_id");
 
-        Typeface letters=Typeface.createFromAsset(getAssets(), "corporate-s-regular.ttf");
-        nameOut.setTypeface(letters);
         nameOut.setText(name);
-        timeOut.setTypeface(letters);
         timeOut.setText(date);
-        detailOut.setTypeface(letters);
-        detailOut.setText(details);
-
         ImageView imageView = (ImageView) findViewById(R.id.imageView2);
         Drawable drawable = Drawable.createFromPath(photo);
         imageView.setImageDrawable(drawable);
+        detailOut.setText(details);
 
+    }
 
+    public void backBtnClicked(View view) {
+        Intent intent = new Intent(this, Reminders.class);
+        startActivity(intent);
     }
 
     public void deleteEvent(View view) {
